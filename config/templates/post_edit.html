@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Edit Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <label for="id_summary">Summary:</label>
+            <textarea id="id_summary" name="summary">{{ form.summary.value }}</textarea>
+        </div>
+        <button type="submit">Update</button>
+    </form>
+{% endblock content %}
